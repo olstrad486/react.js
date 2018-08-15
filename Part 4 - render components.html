@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Render components</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">
+    </script>
+  </head>
+  <body>
+
+    <div id="example"></div>
+
+    <script type="text/babel">
+      class Block extends React.Component {
+    render() {
+      const num = 20;
+      return (
+        <div>
+          <h2>It is {num}</h2>
+          <p>Это простой текст</p>
+        </div>
+      );
+    }
+}
+
+      const place = document.getElementById("example");
+
+      ReactDOM.render (
+        <div>
+          <Block />
+        </div>,
+        place
+    );
+    </script>
+
+  </body>
+</html>

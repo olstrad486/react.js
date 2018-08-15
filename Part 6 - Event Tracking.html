@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name"viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Comptible" content="ie=edge">
+    <title>Event Tracking</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">
+    </script>
+  </head>
+  <body>
+
+    <div id="program"></div>
+
+    <script type="text/babel">
+      class Task extends React.Component {
+        edit() {
+    alert ("Нажата кнопка редактировать");
+  };
+  remove() {
+    alert ("Нажата кнопка удалить");
+  };
+    render() {
+      return (
+        <div className="box">
+            <div className="text">{this.props.children}</div>
+        <button onClick={this.edit} className="btn light">Редактировать</button>
+        <button onClick={this.remove} className="btn red">Удалить</button>
+        </div>
+      );
+    }
+}
+
+      const app = document.getElementById("program");
+
+      ReactDOM.render (
+        <div className="field">
+        <Task>1</Task>
+        <Task>2</Task>
+        <Task>3</Task>
+        </div>,
+        app);
+    </script>
+
+  </body>
+</html>

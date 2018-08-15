@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Props</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">
+    </script>
+  </head>
+  <body>
+
+    <div id="example"></div>
+
+    <script type="text/babel">
+      class Game extends React.Component {
+    render() {
+      return (
+        <div>
+          <h1>{this.props.name}</h1>
+          <h2>{this.props.age}</h2>
+        </div>
+      );
+    }
+}
+
+      const app = document.getElementById("example");
+
+      ReactDOM.render (
+        <div>
+          <Game name="Forza" age="18+" />
+          <Game name="CS GO" age="18+" />
+          <Game name="GTA 5" age="18+" />
+        </div>,
+        app);
+    </script>
+
+  </body>
+</html>
